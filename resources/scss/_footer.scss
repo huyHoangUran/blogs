@@ -1,0 +1,11 @@
+footer {
+  @include flexCenter();
+  height: 94px;
+  background-color: $color-18;
+  margin-top: 40px;
+
+  p {
+    @include fontStyle($color-3, $font-noto-san-jp, 15px, 500);
+    margin: auto 0;
+  }
+}

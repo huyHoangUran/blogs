@@ -1,0 +1,302 @@
+@import "breadcrumb";
+
+.modal-dialog {
+  margin-top: 300px;
+  .modal-content {
+    border-radius: 0px;
+    .modal-header {
+      .modal-title {
+        @include fontStyle($color-8, $font-noto-san-jp, 20px, 700);
+      }
+      button {
+        font-size: 12.5px;
+        position: absolute;
+        right: 12px;
+        top: 14px;
+      }
+    }
+    .modal-body {
+      margin: 45px auto 51px auto;
+      h3 {
+        @include fontStyle($color-8, $font-noto-san-jp, 15px, 400);
+      }
+    }
+    .modal-footer {
+      @include flexSpace;
+      .btnc {
+        @include fontStyle($color-3, $font-noto-san-jp, 20px, 400);
+        width: 80px;
+        height: 40px;
+        border-radius: 4px;
+        border: none;
+      }
+      .close {
+        background-color: $color-25;
+      }
+      .delete {
+        background-color: $color-21;
+      }
+    }
+  }
+}
+
+.detail {
+  @include mobile {
+    margin: 0 42px 40px 42px;
+  }
+
+  @include desktop {
+    margin: 0 100px 40px 100px;
+  }
+
+  .title {
+    margin-top: 0px;
+    h1 {
+      @include fontStyle($color-18, $font-noto-san-jp, 18px, 700);
+    }
+  }
+
+  .author-function {
+    @include flexSpace;
+    margin: 40px 0;
+    .author {
+      @include flexCenter;
+      img {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        margin-right: 8px;
+      }
+
+      .name {
+        h5 {
+          @include fontStyle($color-18, $font-noto-san-jp, 12px, 500);
+          margin: 0;
+        }
+
+        p {
+          @include fontStyle($color-19, $font-noto-san-jp, 11px, 400);
+          margin: 0;
+        }
+      }
+    }
+
+    .function {
+      @include flexSpace;
+      @include mobile {
+        flex-direction: column;
+        width: 236px;
+      }
+
+      @include desktop {
+        width: 380px;
+      }
+
+      .fn {
+        width: 110px;
+        height: 100%;
+        button,
+        a {
+          display: block;
+          @include fontStyle($color-3, $font-noto-san-jp, 15px, 500);
+          width: 100%;
+          height: 31px;
+          background-color: $color-20;
+          border: none;
+          border-radius: 3px;
+        }
+        .edit {
+          background-color: $color-24;
+          padding-top: 4px;
+          text-align: center;
+          text-decoration: none;
+          margin: 10px 0;
+        }
+        .delete {
+          background-color: $color-21;
+        }
+      }
+    }
+  }
+
+  .image {
+    margin: 41px 0;
+    width: 100%;
+    height: auto;
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .description {
+    @include fontStyle($color-22, $font-noto-san-jp, 14px, 400);
+  }
+
+  .like {
+    button,
+    a {
+      font-size: 30px;
+      border: none;
+      background-color: transparent;
+      color: $color-18;
+    }
+    span {
+      font-size: 30px;
+    }
+  }
+
+  .related {
+    @include flexCenter;
+    margin: 0;
+    h3 {
+      @include fontStyle($color-8, $font-noto-san-jp, 24px, 700);
+    }
+  }
+
+  hr {
+    width: 63px;
+    border: 3px solid $color-22;
+    margin: 18px auto 29px auto;
+  }
+
+  .blog {
+    .card {
+      margin-bottom: 30px;
+      img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+      }
+    }
+
+    .card-body {
+      a {
+        @include fontStyle($color-18, $font-noto-san-jp, 17px, 700);
+        text-decoration: none;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+      }
+    }
+  }
+
+  h3 {
+    @include flexCenter;
+    @include fontStyle($color-8, $font-noto-san-jp, 24px, 700);
+    margin: 80px 0 18px 0;
+  }
+
+  .comment {
+    .input {
+      position: relative;
+      @include mobile {
+        padding-left: 40px;
+      }
+
+      @include desktop {
+        padding-left: 60px;
+      }
+
+      img {
+        border-radius: 50%;
+        position: absolute;
+        left: 0px;
+        @include mobile {
+          width: 26px;
+          height: 26px;
+        }
+        @include desktop {
+          width: 48px;
+          height: 48px;
+        }
+      }
+
+      textarea {
+        width: 100%;
+        padding: 5px;
+        border: 1px solid $color-23;
+        border-radius: 4px;
+        @include mobile {
+          height: 55px;
+        }
+
+        @include desktop {
+          height: 82px;
+        }
+      }
+    }
+
+    .send {
+      &:hover {
+        color: $color-4;
+      }
+      border: 0px;
+      font-size: 40px;
+      position: absolute;
+      right: 4px;
+      top: 2px;
+      color: $color-20;
+      background-color: $color-3;
+    }
+
+    .list {
+      display: flex;
+      margin: 8px 0;
+      .avatar {
+        img {
+          border-radius: 50%;
+          @include mobile {
+            width: 26px;
+            height: 26px;
+          }
+
+          @include desktop {
+            width: 48px;
+            height: 48px;
+          }
+        }
+      }
+
+      .name {
+        margin-left: 12px;
+        width: 100%;
+        h5 {
+          @include fontStyle($color-8, $font-noto-san-jp, 24px, 700);
+        }
+        .comment-content {
+          .edit-input {
+            display: none;
+            padding: 8px;
+            width: 100%;
+            height: 70px;
+          }
+          .submit-comment-btn,
+          .edit-comment-btn,
+          .cancel-edit-btn,
+          .delete-comment-btn {
+            border: none;
+            background-color: $color-3;
+            margin: 0 4px 4px 0;
+            i {
+              font-size: 16px;
+            }
+          }
+          .submit-comment-btn {
+            position: relative;
+            right: 0;
+          }
+        }
+        p {
+          &:first-child {
+            @include fontStyle($color-8, $font-noto-san-jp, 14px, 400);
+          }
+          &:last-child {
+            @include fontStyle($color-22, $font-noto-san-jp, 14px, 400);
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+@keyframes fadeIn {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+		visibility: hidden;
+	}
+}
+
+.alert {
+	animation-duration: 5s;
+	animation-fill-mode: forwards;
+}
+
+.fade-in {
+	animation-name: fadeIn;
+	z-index: 5000;
+	position: absolute;
+	top: 0;
+	left: 10px;
+}

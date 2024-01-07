@@ -1,0 +1,43 @@
+@import "mixin";
+.clamp-text {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  position: relative;
+  line-height: 1.7;
+  padding-right: 62px;
+  span {
+    display: block;
+    position: absolute;
+    right: 6px;
+    top: 11px;
+  }
+}
+
+.brand-link {
+  img {
+    width: 160px;
+  }
+}
+
+.user-panel {
+  img {
+    height: 2.1rem;
+  }
+}
+
+.card-header {
+  position: relative;
+  .select {
+    position: absolute;
+    right: 4px;
+    top: 7px;
+    width: 300px;
+    select {
+      border-radius: 5px;
+      width: 100%;
+      padding: 4px;
+    }
+  }
+}

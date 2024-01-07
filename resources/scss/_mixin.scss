@@ -1,0 +1,50 @@
+$width: 768px;
+
+@mixin mobile {
+  @media (max-width: #{$width - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$width}) {
+    @content;
+  }
+}
+
+@mixin buttonStyle {
+  background-color: $main-color;
+  border: 0;
+  padding: 5px 10px;
+  color: wheat;
+}
+
+@mixin flexSpace {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flexCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flexColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+@mixin fontStyle($color: $color-1,
+  $font: $font-noto-san-jp,
+  $size: 18px,
+  $weight: 700) {
+  color: $color;
+  font-family: $font;
+  font-size: $size;
+  font-style: normal;
+  font-weight: $weight;
+  line-height: normal;
+}

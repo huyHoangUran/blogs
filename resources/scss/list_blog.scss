@@ -1,0 +1,46 @@
+.title {
+  text-decoration: none;
+  color: $color-4;
+  padding: 0;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.banner {
+  img {
+    width: 100%;
+    max-width: 100px;
+    max-height: 64px;
+  }
+}
+
+.card-header {
+  position: relative;
+  height: 56px;
+  .filter {
+    position: absolute;
+    right: 6px;
+    #status {
+      margin: 0 4px;
+      width: 150px;
+      height: 30px;
+    }
+    .submit-filter {
+      &:hover {
+        background-color: $color-15;
+      }
+      border: none;
+      width: 80px;
+      height: 30px;
+      background-color: $color-19;
+    }
+  }
+}
+
+.btn,
+.add {
+  width: 128px;
+  margin: 5px 0;
+}
