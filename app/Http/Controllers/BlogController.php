@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Ads;
 use App\Models\Blog;
 use App\Models\User;
-use Illuminate\Http\Request;
+use App\Models\Banner;
 use App\Http\Requests\BlogRequest;
 use App\Services\User\BlogService;
 use App\Services\User\CommentService;
@@ -26,17 +27,17 @@ class BlogController extends Controller
      * Show the form for creating a new resource.
      */
 
-    public function home(Request $request)
+    public function home()
     {
-        $categories = $this->categoryService->getAll();
-        $data = $request->only('search', 'category_id');
-        $blogs = $this->blogService->index($data);
-        return view(self::PATH_VIEW . __FUNCTION__, compact('blogs', 'categories', 'data'));
+        $banners = Banner::all();
+        $adsVip = Ads::where('status', 1)->latest()->get();
+        $ads = Ads::where('status', 2)->latest()->get();
+        return view(self::PATH_VIEW . __FUNCTION__, compact('banners', 'adsVip', 'ads'));
     }
 
     public function create()
     {
-        $categories = $this->categoryService->getAll();
+        $categories = $this->categoryService->getAlls();
         return view(self::PATH_VIEW.__FUNCTION__, compact('categories'));
     }
     

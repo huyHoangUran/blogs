@@ -18,7 +18,7 @@
                                             </option>
                                             <option value="{{ App\Models\Blog::STATUS_INACTIVE }}"
                                                 {{ request('status') == App\Models\Blog::STATUS_INACTIVE ? 'selected' : '' }}>
-                                                {{ __('blog.inactive') }}</option>
+                                                    {{ __('blog.inactive') }}</option>
                                         </select>
                                         <input type="date" name="date" id="date" value="{{ request('date') }}">
                                         <button class="submit-filter" type="submit">{{ __('blog.apply') }}</button>

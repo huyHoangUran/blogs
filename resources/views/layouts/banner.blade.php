@@ -1,1 +1,6 @@
-<img class="img" src="{{ asset('/images/laptop-in-modern-office.png') }}" alt="" />
+<div class="banner">
+    @foreach ($banners as $item)
+        <a href="{{ $item->link }}"><img src="{{ Storage::url($item->image) }}" alt=""></a>
+    @endforeach
+
+</div>

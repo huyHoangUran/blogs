@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Collection;
 
 class CategoryService
 {
-    public function getAll(): Collection
+    public function getAlls(): Collection
     {
         return Category::select('id', 'name')->get();
     }

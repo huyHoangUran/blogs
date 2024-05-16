@@ -40,7 +40,6 @@ class BlogService
             if (isset($data['img'])) {
                 $imageName = $data['img']->store(self::PATH_UPLOAD);
             }
-
             return Blog::create([
                 'title' => $data['title'],
                 'content' => $data['content'],

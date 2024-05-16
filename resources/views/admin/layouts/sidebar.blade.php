@@ -66,6 +66,57 @@
                     </ul>
                 </li>
                 <li class="nav-item">
+                    <a href="{{ route('admins.banners.index') }}" class="nav-link">
+                        <i class="nav-icon fas fa-edit"></i>
+                        <p>
+                            Banners
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview" style="display: none;">
+                        <li class="nav-item">
+                            <a href="{{ route('admins.banners.index') }}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>List banner</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('admins.resets.index') }}" class="nav-link">
+                        <i class="nav-icon fas fa-edit"></i>
+                        <p>
+                            Resets
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview" style="display: none;">
+                        <li class="nav-item">
+                            <a href="{{ route('admins.resets.index') }}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>List resets</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('admins.points.index') }}" class="nav-link">
+                        <i class="nav-icon fas fa-edit"></i>
+                        <p>
+                            Point
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview" style="display: nonep;">
+                        <li class="nav-item">
+                            <a href="{{ route('admins.points.index') }}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>List points</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
                     <a href="{{ route('admins.users.index') }}" class="nav-link">
                         <i class="nav-icon fas fa-edit"></i>
                         <p>

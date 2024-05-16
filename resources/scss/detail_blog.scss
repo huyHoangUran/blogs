@@ -46,7 +46,7 @@
   }
 
   @include desktop {
-    margin: 0 100px 40px 100px;
+    margin: 0 24%;
   }
 
   .title {
@@ -56,6 +56,46 @@
     }
   }
 
+  .guide-list {
+    .guide-item {
+      @include flexSpace();
+      background-color: #eef0f7;
+      .guide-img {
+        img {
+          width: 260px;
+        }
+      }
+      .guide-detail {
+        display: block;
+
+        width: 100%;
+        margin: 4px 10px 0 60px;
+        .detail-title {
+          text-decoration: none;
+          @include fontStyle(#2979a2, $font-noto-san-jp, 17px, 600);
+        }
+        .description {
+          @include fontStyle(#000, $font-noto-san-jp, 14px, 400);
+        }
+        .guide-time {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+
+          h4 {
+            @include fontStyle(#4b0676, $font-noto-san-jp, 15px, 700);
+          }
+          p {
+            margin: 0;
+          }
+        }
+      }
+    }
+    .show-more {
+      margin: 10px auto;
+      text-align: center;
+    }
+  }
   .author-function {
     @include flexSpace;
     margin: 40px 0;

@@ -1,12 +1,17 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdsController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\LikeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CommentController;
-use App\Http\Controllers\LikeController;
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\admin\PointController;
+use App\Http\Controllers\admin\ResetController;
+use App\Http\Controllers\admin\BannerController;
+use App\Http\Controllers\admin\VersionController;
 use App\Http\Controllers\Admin\BlogController as BlogControllerAdmin;
 use App\Http\Controllers\Admin\CategoryController as CategoryControllerAdmin;
 
@@ -45,6 +50,10 @@ Route::middleware(['auth','status'])->group(function () {
         Route::put('/change-password', [UserController::class, 'updatePassword'])->name('update_password');
     });
     Route::resource('blogs', BlogController::class);
+    Route::resource('ads', AdsController::class);
+
+    Route::post('/upload', [ AdsController::class, 'upload'])->name('ckeditor.upload');
+
     Route::group(['as' => 'comments.', 'prefix' => 'comments'], function () {
         Route::post('/store/{blog_id}', [CommentController::class, 'store'])->name('store');
         Route::put('/update/{id}', [CommentController::class, 'update'])->name('update');
@@ -64,10 +73,15 @@ Route::middleware(['auth','admin'])->group(function () {
         Route::put('/approved/{blog}', [BlogController::class, 'approved'])->name('approved');
         Route::delete('/delete/{blog}', [BlogController::class, 'destroy'])->name('delete');
     });
+    
     Route::group(['as' => 'admins.', 'prefix' => 'admins'], function () {
+        Route::resource('banners', BannerController::class);
         Route::get('/', [AdminController::class, 'index'])->name('index');
         Route::get('/blog/list', [BlogControllerAdmin::class, 'list'])->name('blog.list');
         Route::resource('categories', CategoryControllerAdmin::class);
+        Route::resource('resets', ResetController::class);
+        Route::resource('versions', VersionController::class);
+        Route::resource('points', PointController::class);
         Route::get('/users', [AdminController::class, 'getAllUsers'])->name('users.index');
         Route::put('/users/block-user/{user}', [AdminController::class, 'blockUser'])->name('users.block_user');
     });
